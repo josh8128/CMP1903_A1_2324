@@ -29,7 +29,7 @@ namespace CMP1903_A1_2324
         }
 
         //Method to roll the die, works using the random number generator
-         int Roll()
+        public int Roll()
         {
             _dieValue = _randomNumber.Next(1, 7); 
             return _dieValue;
