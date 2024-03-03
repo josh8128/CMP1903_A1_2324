@@ -24,7 +24,7 @@ namespace CMP1903_A1_2324
                 {
                     //Plays the dice roll game
                     case "1":
-                        game.PlayGame();
+                        StartGame(game);
                         break;
                     //Calls the testing class to test the game
                     case "2":
@@ -41,6 +41,11 @@ namespace CMP1903_A1_2324
                         break;
                 }
             }
+        }
+
+        static void StartGame(Game game)
+        {
+            game.PlayGame();
         }
     }
 }

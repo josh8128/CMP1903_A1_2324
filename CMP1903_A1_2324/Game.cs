@@ -25,7 +25,32 @@ namespace CMP1903_A1_2324
             _dieRoll3 = new Die();
         }
 
+        static void menuUI()
+        {
+            Console.WriteLine("Press 1 to play the game, 2 to test the game, or 3 to quit:");
+            string gameMode = Console.ReadLine();
 
+            switch (gameMode)
+            {
+                //Plays the dice roll game
+                case "1":
+                    PlayGame();
+                    break;
+                //Calls the testing class to test the game
+                //case "2":
+                    //Test the game
+                    //testing.TestGame(game);
+                    //break;
+                //Quits the game 
+                case "3":
+                    Environment.Exit(0);
+                default:
+                    //Invalid input, asks user to enter 1, 2 or 3
+                    Console.WriteLine("Invalid choice. Please enter 1, 2, or 3.");
+                    break;
+            }
+        }
+        
         //Method which lets the user play the dice game
         public void PlayGame()
         {
@@ -59,10 +84,11 @@ namespace CMP1903_A1_2324
                 Console.Write("Press 1 to roll again: ");
                 string playAgainChoice = Console.ReadLine();
 
-                if (playAgainChoice != "1") ;
+                if (playAgainChoice != "1")
                 {
                     playAgain = false;
                     Console.WriteLine($"The game is over");
+                    menuUI();
                 }
                 
             }
@@ -76,6 +102,14 @@ namespace CMP1903_A1_2324
             int dieValue3 = _dieRoll3.Roll();
 
             return (dieValue1, dieValue2, dieValue3);
+        }
+
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                menuUI();
+            }
         }
     }
 }
