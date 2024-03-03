@@ -9,23 +9,18 @@ namespace CMP1903_A1_2324
     //Defines class "die" which represents a single die
     internal class Die
     {
-        /*
-         * The Die class should contain one property to hold the current die value,
-         * and one method that rolls the die, returns and integer and takes no parameters.
-         */
         //Declares an object "RandomNumber" which will be used to generate a random number
         private RandomNumber randomNumber;
+        private RandomNumber _randomNumber;
         //Declares an integer to hold the current value on the die
         private int dieValue;
+        private int _dieValue;
 
-        //Property
-
-
-        //Method
     //Constructor for die class
         public Die()
         {
             randomNumber = new RandomNumber();
+            _randomNumber = new RandomNumber();
             Roll(); // Initialises the die with a random value
         }
 
@@ -34,6 +29,8 @@ namespace CMP1903_A1_2324
         {
             get { return dieValue; }
             private set { dieValue = value; }
+            get { return _dieValue; }
+            private set { _dieValue = value; }
         }
 
     //Method to roll the die, works using the random number generator
@@ -41,6 +38,8 @@ namespace CMP1903_A1_2324
         {
             dieValue = randomNumber.Next(1, 7); 
             return dieValue;
+            _dieValue = _randomNumber.Next(1, 7); 
+            return _dieValue;
         }
     }
 }
