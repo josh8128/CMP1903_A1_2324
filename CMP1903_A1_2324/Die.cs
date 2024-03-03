@@ -9,15 +9,15 @@ namespace CMP1903_A1_2324
     //Defines class "die" which represents a single die
     internal class Die
     {
-        //Declares an object "RandomNumber" which will be used to generate a random number
-        private RandomNumber _randomNumber;
+        //Uses random which will be used to generate a random number
+        private Random _randomNumber;
         //Declares an integer to hold the current value on the die
         private int _dieValue;
 
         //Constructor for die class
         public Die()
         {
-            _randomNumber = new RandomNumber();
+            _randomNumber = new Random();
             Roll(); // Initialises the die with a random value
         }
 
