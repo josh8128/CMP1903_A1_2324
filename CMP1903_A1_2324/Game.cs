@@ -13,8 +13,6 @@ namespace CMP1903_A1_2324
         private Die _dieRoll1;
         private Die _dieRoll2;
         private Die _dieRoll3;
-        private int _totalSumOfRolls;
-        private int _gameRound;
 
         //Constructor for game class
         public Game()
@@ -25,7 +23,7 @@ namespace CMP1903_A1_2324
             _dieRoll3 = new Die();
         }
 
-        static void menuUI()
+        static void MenuUI()
         {
             Console.WriteLine("Press 1 to play the game, 2 to test the game, or 3 to quit:");
             string gameMode = Console.ReadLine();
@@ -38,47 +36,41 @@ namespace CMP1903_A1_2324
                     break;
                 //Calls the testing class to test the game
                 //case "2":
-                    //Test the game
-                    //testing.TestGame(game);
-                    //break;
+                //Test the game
+                //testing.TestGame(game);
+                //break;
                 //Quits the game 
                 case "3":
                     Environment.Exit(0);
+                    break;
                 default:
                     //Invalid input, asks user to enter 1, 2 or 3
                     Console.WriteLine("Invalid choice. Please enter 1, 2, or 3.");
                     break;
             }
         }
-        
+
         //Method which lets the user play the dice game
-        public void PlayGame()
+        static void PlayGame()
         {
-            //Resets the total sum of rolls at the start of each game
-            _totalSumOfRolls = 0;
-            //Sets the round of the game to 0 at the start of each game
-            _gameRound = 0;
+            Game game = new Game();
             //Sets a flag to know when the player wants to stop playing the game
             bool playAgain = true;
 
             //The player can keep rolling dice whilst in this loop
             while (playAgain)
             {
-                _gameRound++;
                 int dieValue1, dieValue2, dieValue3;
                 //Rolls each individual die and gets the value of each
-                (dieValue1, dieValue2, dieValue3) = RollDice();
+                (dieValue1, dieValue2, dieValue3) = game.RollDice();
                 //Adds the sum of the die values
                 int sumOfRolls = (dieValue1 + dieValue2 + dieValue3);
-                _totalSumOfRolls += sumOfRolls;
 
                 //Displays all the die roll values and sums
-                Console.WriteLine($"Dice rolls for round: {_gameRound}");
                 Console.WriteLine($"The first die rolled a: {dieValue1}");
                 Console.WriteLine($"The second die rolled a: {dieValue2}");
                 Console.WriteLine($"The third die rolled a: {dieValue3}");
                 Console.WriteLine($"The sum of rolls this game is: {sumOfRolls}");
-                Console.WriteLine($"The overall game total sum of rolls is: {_totalSumOfRolls}");
 
                 //Asks player if they want to play again, if they do not it sets flag to false ending the loop
                 Console.Write("Press 1 to roll again: ");
@@ -88,9 +80,9 @@ namespace CMP1903_A1_2324
                 {
                     playAgain = false;
                     Console.WriteLine($"The game is over");
-                    menuUI();
+                    MenuUI();
                 }
-                
+
             }
         }
 
@@ -108,7 +100,7 @@ namespace CMP1903_A1_2324
         {
             while (true)
             {
-                menuUI();
+                MenuUI();
             }
         }
     }
