@@ -10,34 +10,27 @@ namespace CMP1903_A1_2324
     internal class Die
     {
         //Declares an object "RandomNumber" which will be used to generate a random number
-        private RandomNumber randomNumber;
         private RandomNumber _randomNumber;
         //Declares an integer to hold the current value on the die
-        private int dieValue;
         private int _dieValue;
 
-    //Constructor for die class
+        //Constructor for die class
         public Die()
         {
-            randomNumber = new RandomNumber();
             _randomNumber = new RandomNumber();
             Roll(); // Initialises the die with a random value
         }
 
-    //Property to hold the die's current value
+        //Property to hold the die's current value
         public int DieValue
         {
-            get { return dieValue; }
-            private set { dieValue = value; }
             get { return _dieValue; }
             private set { _dieValue = value; }
         }
 
-    //Method to roll the die, works using the random number generator
+        //Method to roll the die, works using the random number generator
          int Roll()
         {
-            dieValue = randomNumber.Next(1, 7); 
-            return dieValue;
             _dieValue = _randomNumber.Next(1, 7); 
             return _dieValue;
         }
