@@ -40,7 +40,7 @@ namespace CMP1903_A1_2324
                     break;
                 //Calls the testing class to test the game
                 case "2":
-                //Test the game
+                    //Test the game
                     TestGame();
                     break;
                 //Quits the game 
@@ -65,7 +65,7 @@ namespace CMP1903_A1_2324
             while (playAgain)
             {
                 game._roundCounter++;
-                
+
                 int dieValue1, dieValue2, dieValue3;
                 //Rolls each individual die and gets the value of each
                 (dieValue1, dieValue2, dieValue3) = game.RollDice();
@@ -108,8 +108,8 @@ namespace CMP1903_A1_2324
         static void TestGame()
         {
             Testing testing = new Testing();
-            TestDieRoll();
-            TestDieSum();
+            testing.TestDieRoll();
+            testing.TestDieSum();
             Console.WriteLine($"Testing is over");
             MenuUI();
         }
