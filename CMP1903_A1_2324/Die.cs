@@ -10,7 +10,7 @@ namespace CMP1903_A1_2324
     internal class Die
     {
         //Uses random which will be used to generate a random number
-        private Random _randomNumber;
+        private static Random _randomNumber;
         //Declares an integer to hold the current value on the die
         private int _dieValue;
 
