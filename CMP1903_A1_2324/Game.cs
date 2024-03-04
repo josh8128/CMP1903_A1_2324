@@ -39,10 +39,10 @@ namespace CMP1903_A1_2324
                     PlayGame();
                     break;
                 //Calls the testing class to test the game
-                //case "2":
+                case "2":
                 //Test the game
-                //testing.TestGame(game);
-                //break;
+                    TestGame();
+                    break;
                 //Quits the game 
                 case "3":
                     Environment.Exit(0);
@@ -103,6 +103,15 @@ namespace CMP1903_A1_2324
             int dieValue3 = _dieRoll3.Roll();
 
             return (dieValue1, dieValue2, dieValue3);
+        }
+
+        static void TestGame()
+        {
+            Testing testing = new Testing();
+            TestDieRoll();
+            TestDieSum();
+            Console.WriteLine($"Testing is over");
+            MenuUI();
         }
 
         static void Main(string[] args)
