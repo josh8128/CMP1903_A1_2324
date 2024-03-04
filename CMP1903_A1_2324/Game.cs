@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    ///<summary>
+    /// <summary>
     /// Defines class "Game" which is responsible for rolling the dice and calculating the sum
     /// It is also responsible for displaying the menu to allow for navigation between the different states
-    ///</summary>
+    /// </summary>
     internal class Game
     {
         // Declares 3 private die objects which are used for the dice roll, the total of all rolls and the round counter
