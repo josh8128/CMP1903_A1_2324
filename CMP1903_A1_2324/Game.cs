@@ -13,6 +13,8 @@ namespace CMP1903_A1_2324
         private Die _dieRoll1;
         private Die _dieRoll2;
         private Die _dieRoll3;
+        private int _roundCounter;
+        private int _totalSumOfRolls;
 
         //Constructor for game class
         public Game()
@@ -21,6 +23,8 @@ namespace CMP1903_A1_2324
             _dieRoll1 = new Die();
             _dieRoll2 = new Die();
             _dieRoll3 = new Die();
+            _roundCounter = 0;
+            _totalSumOfRolls = 0;
         }
 
         static void MenuUI()
@@ -60,17 +64,22 @@ namespace CMP1903_A1_2324
             //The player can keep rolling dice whilst in this loop
             while (playAgain)
             {
+                game._roundCounter++;
+                
                 int dieValue1, dieValue2, dieValue3;
                 //Rolls each individual die and gets the value of each
                 (dieValue1, dieValue2, dieValue3) = game.RollDice();
                 //Adds the sum of the die values
                 int sumOfRolls = (dieValue1 + dieValue2 + dieValue3);
+                game._totalSumOfRolls += sumOfRolls;
 
                 //Displays all the die roll values and sums
+                Console.WriteLine($"Round: {game._roundCounter}");
                 Console.WriteLine($"The first die rolled a: {dieValue1}");
                 Console.WriteLine($"The second die rolled a: {dieValue2}");
                 Console.WriteLine($"The third die rolled a: {dieValue3}");
-                Console.WriteLine($"The sum of rolls this game is: {sumOfRolls}");
+                Console.WriteLine($"The sum of rolls this round is: {sumOfRolls}");
+                Console.WriteLine($"The sum of rolls this game is: {game._totalSumOfRolls}");
 
                 //Asks player if they want to play again, if they do not it sets flag to false ending the loop
                 Console.Write("Press 1 to roll again: ");
