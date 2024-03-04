@@ -29,7 +29,7 @@ namespace CMP1903_A1_2324
 
         static void MenuUI()
         {
-            Console.WriteLine("Press 1 to play the game, 2 to test the game, or 3 to quit:");
+            Console.WriteLine("Press 1 to play the game\nPress 2 to test the game\nPress 3 to quit");
             string gameMode = Console.ReadLine();
 
             switch (gameMode)
@@ -74,21 +74,21 @@ namespace CMP1903_A1_2324
                 game._totalSumOfRolls += sumOfRolls;
 
                 //Displays all the die roll values and sums
-                Console.WriteLine($"Round: {game._roundCounter}");
+                Console.WriteLine($"\nRound: {game._roundCounter}");
                 Console.WriteLine($"The first die rolled a: {dieValue1}");
                 Console.WriteLine($"The second die rolled a: {dieValue2}");
                 Console.WriteLine($"The third die rolled a: {dieValue3}");
-                Console.WriteLine($"The sum of rolls this round is: {sumOfRolls}");
-                Console.WriteLine($"The sum of rolls this game is: {game._totalSumOfRolls}");
+                Console.WriteLine($"\nThe sum of rolls this round is: {sumOfRolls}");
+                Console.WriteLine($"The sum of rolls this game is: {game._totalSumOfRolls}\n");
 
                 //Asks player if they want to play again, if they do not it sets flag to false ending the loop
-                Console.Write("Press 1 to roll again: ");
+                Console.Write("Press 1 to roll again, press any other key to return to menu\n");
                 string playAgainChoice = Console.ReadLine();
 
                 if (playAgainChoice != "1")
                 {
                     playAgain = false;
-                    Console.WriteLine($"The game is over");
+                    Console.WriteLine($"\nThe game is over\n");
                     MenuUI();
                 }
 
@@ -110,7 +110,7 @@ namespace CMP1903_A1_2324
             Testing testing = new Testing();
             testing.TestDieRoll();
             testing.TestDieSum();
-            Console.WriteLine($"Testing is over");
+            Console.WriteLine($"Testing complete\nReturning to menu\n");
             MenuUI();
         }
 
