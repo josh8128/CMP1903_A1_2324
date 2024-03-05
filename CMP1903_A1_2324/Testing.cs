@@ -13,20 +13,16 @@ namespace CMP1903_A1_2324
     /// </summary>
     internal class Testing
     {
-        // Declares 3 private die objects used for testing the die rolls
-        private Die _testDieRoll1;
-        private Die _testDieRoll2;
-        private Die _testDieRoll3;
+        // Declares a private instance of the Game class, "_testGame"
+        private Game _testGame;
 
         /// <summary>
-        /// Constructor for Testing class, used to initialise the 3 die objects to be used for the testing
+        /// Constructor for Testing class, used to initialise the new instance of the game class, "_testGame" to be used for testing
         /// </summary>
         public Testing()
         {
-            //Initialises the 3 test die objects
-            _testDieRoll1 = new Die();
-            _testDieRoll2 = new Die();
-            _testDieRoll3 = new Die();
+            //Initialises the _testGame object
+            _testGame = new Game();
         }
 
         /// <summary>
@@ -34,9 +30,8 @@ namespace CMP1903_A1_2324
         /// </summary>
         public void TestDieRoll()
         {
-            int testDieValue1 = _testDieRoll1.Roll();
-            int testDieValue2 = _testDieRoll2.Roll();
-            int testDieValue3 = _testDieRoll3.Roll();
+            int testDieValue1, testDieValue2, testDieValue3;
+            (testDieValue1, testDieValue2, testDieValue3) = _testGame.GetDieRolls();
 
             // Checks to see each roll is within the range 1-6 or it will give the error message given
             Debug.Assert(testDieValue1 >= 1 && testDieValue1 <= 6, "Die roll 1 is out of range (1-6)");
@@ -49,9 +44,8 @@ namespace CMP1903_A1_2324
         /// </summary>
         public void TestDieSum()
         {
-            int testDieValue1 = _testDieRoll1.Roll();
-            int testDieValue2 = _testDieRoll2.Roll();
-            int testDieValue3 = _testDieRoll3.Roll();
+            int testDieValue1, testDieValue2, testDieValue3;
+            (testDieValue1, testDieValue2, testDieValue3) = _testGame.GetDieRolls();
 
             int testSumOfRolls = testDieValue1 + testDieValue2 + testDieValue3;
 

@@ -33,6 +33,28 @@ namespace CMP1903_A1_2324
         }
 
         /// <summary>
+        /// Gets the result of rolling the three dice from the method RollDice()
+        /// </summary>
+        /// <returns>A tuple which contains the result of the RollDice() method, this is so it can be accessed in the Testing class</returns>
+        public (int, int, int) GetDieRolls()
+        {
+            return RollDice();
+        }
+
+        /// <summary>
+        /// Method to roll each individual die and then return the values of each die
+        /// </summary>
+        /// <returns>A tuple which contains the 3 values of the rolled dice</returns>
+        private (int, int, int) RollDice()
+        {
+            int dieValue1 = _dieRoll1.Roll();
+            int dieValue2 = _dieRoll2.Roll();
+            int dieValue3 = _dieRoll3.Roll();
+
+            return (dieValue1, dieValue2, dieValue3);
+        }
+        
+        /// <summary>
         /// Displays the user interface to allow player to select whether they want to play, test or quit
         /// </summary>
         static void MenuUI()
@@ -107,18 +129,7 @@ namespace CMP1903_A1_2324
             }
         }
 
-        /// <summary>
-        /// Method to roll each individual die and then return the values of each die
-        /// </summary>
-        /// <returns>A tuple which contains the 3 values of the rolled dice</returns>
-        private (int, int, int) RollDice()
-        {
-            int dieValue1 = _dieRoll1.Roll();
-            int dieValue2 = _dieRoll2.Roll();
-            int dieValue3 = _dieRoll3.Roll();
-
-            return (dieValue1, dieValue2, dieValue3);
-        }
+        
 
         /// <summary>
         /// Method which lets the player test the game by calling the testing class and calling methods in it
